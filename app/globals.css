@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Soft Luminous Glass palette */
+  --bg-base:        #f4f3ff;
+  --bg-surface:     rgba(255, 255, 255, 0.72);
+  --bg-surface-alt: rgba(255, 255, 255, 0.45);
+  --bg-mesh-a:      #ede9fe;
+  --bg-mesh-b:      #fdf4ff;
+  --bg-mesh-c:      #f0fdf4;
+
+  --border:         rgba(124, 111, 247, 0.14);
+  --border-strong:  rgba(124, 111, 247, 0.28);
+
+  --text-primary:   #1e1b4b;
+  --text-secondary: #6b7280;
+  --text-muted:     #a3a3b3;
+
+  --accent:         #7c6ff7;
+  --accent-soft:    #ede9fe;
+  --accent-glow:    rgba(124, 111, 247, 0.18);
+
+  --amber:          #f59e0b;
+  --amber-soft:     #fef3c7;
+  --rose:           #fb7185;
+  --rose-soft:      #fff1f2;
+  --emerald:        #34d399;
+  --emerald-soft:   #ecfdf5;
+  --sky:            #38bdf8;
+  --sky-soft:       #f0f9ff;
+
+  --shadow-card:    0 4px 24px rgba(124, 111, 247, 0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-hover:   0 8px 40px rgba(124, 111, 247, 0.15), 0 2px 8px rgba(0,0,0,0.06);
+
+  --radius:         1rem;
+  --radius-sm:      0.625rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-base);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-jakarta);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient mesh background */
+.mesh-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 10%,  var(--bg-mesh-a) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 5%,   var(--bg-mesh-b) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 80% 90%,  var(--bg-mesh-c) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 20% 85%,  var(--bg-mesh-a) 0%, transparent 55%),
+    var(--bg-base);
+  min-height: 100vh;
+}
+
+/* Glass card base */
+.glass {
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.glass:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Recharts custom tooltip glass */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: rgba(255,255,255,0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: 0 8px 32px rgba(124,111,247,0.12) !important;
+  font-size: 11px !important;
+  color: var(--text-primary) !important;
+}
+
+/* Subtle entrance animation */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeSlideUp 0.45s ease both;
 }
