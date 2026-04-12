@@ -2006,7 +2006,7 @@ export default function LandingPage() {
               Q-Print on GitHub
             </a>
             <a
-              href="https://github.com/Vivekv634/qprint-analytics"
+              href="https://github.com/Vivekv634/q-print"
               target="_blank"
               rel="noopener noreferrer"
               style={{

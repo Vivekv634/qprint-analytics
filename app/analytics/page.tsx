@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import { getDb } from "@/lib/mongodb";
-import { getSummary, getTrends, getPeakHours, getCampuses } from "@/lib/db/analytics";
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://q-print.vercel.app";
+
+export const metadata: Metadata = {
+  title: "Live Dashboard",
+  description:
+    "Live print analytics dashboard — monitor print jobs, revenue, peak hours, and campus-level performance in real time.",
+  robots: { index: false, follow: false },
+  alternates: {
+    canonical: `${siteUrl}/analytics`,
+  },
+};
+import {
+  getSummary,
+  getTrends,
+  getPeakHours,
+  getCampuses,
+} from "@/lib/db/analytics";
 import { KpiCard } from "@/components/KpiCard";
 import { TrendsChart } from "@/components/TrendsChart";
 import { PeakHoursBar } from "@/components/PeakHoursBar";
@@ -38,23 +57,24 @@ export default async function DashboardPage() {
     await Promise.all([
       getSummary(db),
       getTrends(db, 30) as Promise<TrendRow[]>,
-      getTrends(db, 7)  as Promise<TrendRow[]>,
+      getTrends(db, 7) as Promise<TrendRow[]>,
       getTrends(db, 90) as Promise<TrendRow[]>,
       getPeakHours(db),
-      getCampuses(db)   as Promise<CampusRow[]>,
+      getCampuses(db) as Promise<CampusRow[]>,
     ]);
 
   return (
     <div className="mesh-bg min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
-
         {/* ── Nav ── */}
         <nav className="glass animate-in flex items-center justify-between px-5 py-3.5">
           <div className="flex items-center gap-3">
             {/* Logo mark */}
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold"
-              style={{ background: "linear-gradient(135deg, #7c6ff7 0%, #a78bfa 100%)" }}
+              style={{
+                background: "linear-gradient(135deg, #7c6ff7 0%, #a78bfa 100%)",
+              }}
             >
               Q
             </div>
@@ -91,9 +111,7 @@ export default async function DashboardPage() {
 
         {/* ── KPI Cards ── */}
         <section>
-          <p
-            className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-3 px-1"
-          >
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-3 px-1">
             All-time totals
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
