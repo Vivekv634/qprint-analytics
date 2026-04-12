@@ -972,7 +972,7 @@ export default function LandingPage() {
         }}
       >
         <div style={{ maxWidth: innerMax, margin: "0 auto" }}>
-          <SectionLabel>Why QPrint Analytics</SectionLabel>
+          <SectionLabel>Why QPrint</SectionLabel>
 
           <div
             style={{
