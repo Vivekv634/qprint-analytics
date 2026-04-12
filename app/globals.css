@@ -101,3 +101,181 @@ body {
 .animate-in {
   animation: fadeSlideUp 0.45s ease both;
 }
+
+/* ─────────────────────────────────────────────────────
+   Landing Page Theme Variables
+   ───────────────────────────────────────────────────── */
+
+[data-lp-theme="dark"] {
+  --lp-bg:                   #070707;
+  --lp-bg-alt:               #0c0c0c;
+  --lp-surface:              #111111;
+  --lp-text:                 #f0ece4;
+  --lp-text-2:               #888888;
+  --lp-text-3:               #555555;
+  --lp-text-4:               #3a3a3a;
+  --lp-accent:               #f5a623;
+  --lp-accent-bg:            rgba(245, 166, 35, 0.08);
+  --lp-accent-bg-2:          rgba(245, 166, 35, 0.13);
+  --lp-accent-border:        rgba(245, 166, 35, 0.20);
+  --lp-accent-border-2:      rgba(245, 166, 35, 0.35);
+  --lp-border:               rgba(255, 255, 255, 0.06);
+  --lp-border-2:             rgba(255, 255, 255, 0.09);
+  --lp-divider:              rgba(255, 255, 255, 0.05);
+  --lp-code-bg:              #080808;
+  --lp-code-text:            #f5a623;
+  --lp-code-comment:         #3d3d3d;
+  --lp-code-prompt:          #555555;
+  --lp-card-bg:              #0c0c0c;
+  --lp-card-border:          rgba(245, 166, 35, 0.18);
+  --lp-card-glow:            rgba(245, 166, 35, 0.05);
+  --lp-node-bg:              #121212;
+  --lp-node-bg-accent:       rgba(245, 166, 35, 0.07);
+  --lp-node-icon-bg:         rgba(255, 255, 255, 0.05);
+  --lp-node-icon-bg-accent:  rgba(245, 166, 35, 0.18);
+  --lp-node-icon:            #666666;
+  --lp-node-icon-accent:     #f5a623;
+  --lp-stat-bg:              #111111;
+  --lp-stat-left:            rgba(245, 166, 35, 0.45);
+  --lp-nav-bg:               rgba(7, 7, 7, 0.96);
+  --lp-cta-pill-bg:          #f5a623;
+  --lp-cta-pill-text:        #070707;
+  --lp-gh-cta-bg:            #f0ece4;
+  --lp-gh-cta-text:          #070707;
+  --lp-toggle-bg:            rgba(255, 255, 255, 0.07);
+  --lp-toggle-border:        rgba(255, 255, 255, 0.12);
+  --lp-contrib-bg:           #111111;
+  --lp-contrib-hover:        rgba(245, 166, 35, 0.04);
+  --lp-contrib-border:       rgba(255, 255, 255, 0.06);
+  --lp-contrib-border-hover: rgba(245, 166, 35, 0.22);
+  --lp-footer-border:        rgba(255, 255, 255, 0.05);
+  --lp-footer-text:          #3a3a3a;
+  --lp-tip-bg:               rgba(245, 166, 35, 0.05);
+  --lp-tip-border:           rgba(245, 166, 35, 0.14);
+  --lp-flow-line:            rgba(245, 166, 35, 0.45);
+  --lp-ghost-stroke:         rgba(245, 166, 35, 0.055);
+  --lp-api-bg:               #0a0a0a;
+  --lp-api-border:           rgba(245, 166, 35, 0.10);
+  --lp-tag-bg:               rgba(255, 255, 255, 0.04);
+  --lp-tag-border:           rgba(255, 255, 255, 0.07);
+  --lp-tag-text:             #777777;
+  --lp-pre-tag-text:         #fb7185;
+  --lp-get-tag-text:         #38bdf8;
+  --lp-quote-bg:             #111111;
+  --lp-quote-left:           rgba(245, 166, 35, 0.6);
+  --lp-step-line:            rgba(245, 166, 35, 0.2);
+  --lp-dot-grid:             rgba(255, 255, 255, 0.035);
+  --lp-glow-blob:            rgba(245, 166, 35, 0.055);
+  --lp-outline-text:         rgba(245, 166, 35, 0.055);
+  --lp-live-dot:             #34d399;
+  --lp-outline-stroke:       1.5px rgba(245, 166, 35, 0.055);
+}
+
+[data-lp-theme="light"] {
+  --lp-bg:                   #f7f4ef;
+  --lp-bg-alt:               #f0ece3;
+  --lp-surface:              #e9e4d8;
+  --lp-text:                 #18150e;
+  --lp-text-2:               #6b6355;
+  --lp-text-3:               #9b9185;
+  --lp-text-4:               #bbb5a8;
+  --lp-accent:               #c47c0a;
+  --lp-accent-bg:            rgba(196, 124, 10, 0.08);
+  --lp-accent-bg-2:          rgba(196, 124, 10, 0.13);
+  --lp-accent-border:        rgba(196, 124, 10, 0.22);
+  --lp-accent-border-2:      rgba(196, 124, 10, 0.38);
+  --lp-border:               rgba(0, 0, 0, 0.07);
+  --lp-border-2:             rgba(0, 0, 0, 0.10);
+  --lp-divider:              rgba(0, 0, 0, 0.07);
+  --lp-code-bg:              #e4dfd0;
+  --lp-code-text:            #c47c0a;
+  --lp-code-comment:         #bbb5a5;
+  --lp-code-prompt:          #aaa098;
+  --lp-card-bg:              #f0ece3;
+  --lp-card-border:          rgba(196, 124, 10, 0.20);
+  --lp-card-glow:            rgba(196, 124, 10, 0.03);
+  --lp-node-bg:              #eae6da;
+  --lp-node-bg-accent:       rgba(196, 124, 10, 0.07);
+  --lp-node-icon-bg:         rgba(0, 0, 0, 0.05);
+  --lp-node-icon-bg-accent:  rgba(196, 124, 10, 0.15);
+  --lp-node-icon:            #999999;
+  --lp-node-icon-accent:     #c47c0a;
+  --lp-stat-bg:              #ede9df;
+  --lp-stat-left:            rgba(196, 124, 10, 0.5);
+  --lp-nav-bg:               rgba(247, 244, 239, 0.96);
+  --lp-cta-pill-bg:          #c47c0a;
+  --lp-cta-pill-text:        #f7f4ef;
+  --lp-gh-cta-bg:            #18150e;
+  --lp-gh-cta-text:          #f7f4ef;
+  --lp-toggle-bg:            rgba(0, 0, 0, 0.06);
+  --lp-toggle-border:        rgba(0, 0, 0, 0.12);
+  --lp-contrib-bg:           #ede9df;
+  --lp-contrib-hover:        rgba(196, 124, 10, 0.05);
+  --lp-contrib-border:       rgba(0, 0, 0, 0.07);
+  --lp-contrib-border-hover: rgba(196, 124, 10, 0.25);
+  --lp-footer-border:        rgba(0, 0, 0, 0.07);
+  --lp-footer-text:          #bbb5a8;
+  --lp-tip-bg:               rgba(196, 124, 10, 0.06);
+  --lp-tip-border:           rgba(196, 124, 10, 0.16);
+  --lp-flow-line:            rgba(196, 124, 10, 0.45);
+  --lp-ghost-stroke:         rgba(0, 0, 0, 0.04);
+  --lp-api-bg:               #e8e4d8;
+  --lp-api-border:           rgba(196, 124, 10, 0.12);
+  --lp-tag-bg:               rgba(0, 0, 0, 0.04);
+  --lp-tag-border:           rgba(0, 0, 0, 0.08);
+  --lp-tag-text:             #888880;
+  --lp-pre-tag-text:         #e53e6d;
+  --lp-get-tag-text:         #0e7490;
+  --lp-quote-bg:             #ede9df;
+  --lp-quote-left:           rgba(196, 124, 10, 0.6);
+  --lp-step-line:            rgba(196, 124, 10, 0.2);
+  --lp-dot-grid:             rgba(0, 0, 0, 0.03);
+  --lp-glow-blob:            rgba(196, 124, 10, 0.04);
+  --lp-outline-text:         rgba(0, 0, 0, 0.04);
+  --lp-live-dot:             #16a34a;
+  --lp-outline-stroke:       1.5px rgba(0, 0, 0, 0.05);
+}
+
+/* ─────────────────────────────────────────────────────
+   Landing Page Animations
+   ───────────────────────────────────────────────────── */
+
+@keyframes lp-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes lp-slide-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lp-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+
+@keyframes lp-scroll-line {
+  0%   { transform: scaleY(0) translateY(-100%); opacity: 0; }
+  30%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { transform: scaleY(1) translateY(0%); opacity: 0; }
+}
+
+/* SVG flow-line dash animation used in the How It Works diagram */
+@keyframes flowDash {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -14; }
+}
+
+/* Reveal transition triggered by JS IntersectionObserver */
+.lp-reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.lp-hidden {
+  opacity: 0;
+  transform: translateY(28px);
+}
